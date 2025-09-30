@@ -13,7 +13,7 @@
   <meta charset="UTF-8">
   <title>Міні-лендинг</title>
   <link rel="stylesheet" href="style.css">
- <script src="analytics.js"></script> 
+ <!-- <script src="analytics.js"></script> --> 
 </head>
 <body>
   <header>
@@ -47,9 +47,18 @@
   <footer>
     <p>&copy; 2025 Міні-лендинг</p>
   </footer>
- 
+ <script src="analytics.js"></script>
+  <script>
+    document.querySelectorAll(".buy-btn").forEach(btn => {
+      btn.addEventListener("click", function() {
+        let product = this.getAttribute("data-product");
+        document.getElementById("productName").textContent = product;
+      });
+    });
+  </script>
 </body>
 </html>
+
 
 
 
