@@ -2,7 +2,7 @@
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-T0P4LM7238');
+gtag('config', 'G-0SNMWTMGCL');
 
 // Функция перехода на checkout
 function goToCheckout(product) {
@@ -28,3 +28,4 @@ function logPurchase(product) {
   });
   console.log("Event: purchase", product);
 }
+
