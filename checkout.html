@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Оформление заказа</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T0P4LM7238"></script>
+  <script src="analytics.js"></script>
+</head>
+<body>
+  <h1>Оформление заказа</h1>
+
+  <form id="checkoutForm">
+    <p>Товар: <span id="productName"></span></p>
+    <label>Имя: <input type="text" required></label><br>
+    <label>Email: <input type="email" required></label><br>
+    <button type="submit">Завершить заказ</button>
+  </form>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const product = urlParams.get("product");
+
+    const productNames = {
+      pro1: "Протеин Variations",
+      pro2: "Протеин Passages",
+      pro3: "Протеин Variations 2",
+      pro4: "Протеин Pedicure"
+    };
+
+    document.getElementById("productName").innerText = productNames[product] || "Неизвестный товар";
+
+    // Событие начала оформления
+    logBeginCheckout(product);
+
+    document.getElementById("checkoutForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      logPurchase(product);
+      alert("Заказ оформлен (учебный пример)!");
+    });
+  </script>
+</body>
+</html>
